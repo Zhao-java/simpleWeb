@@ -55,10 +55,9 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
             synchronized (jobs){
                 jobs.addLast(job);
                 // 检测出队列已满，需要增加线程，扩容
-                System.out.println(workers.size());
-                if (getJobSize()>MAX_JOB_NUMS) {
-                    addWorkers(MAX_WORKER_NUMBERS-workers.size());
-                }
+//                if (getJobSize()>MAX_JOB_NUMS) {
+//                    addWorkers(MAX_WORKER_NUMBERS-workers.size());
+//                }
                 jobs.notify();
             }
 
